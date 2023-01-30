@@ -1,6 +1,7 @@
 import {
   setCurrentMonthAction,
   setCurrentYearAction,
+  setSelectedDateAction,
 } from './calendar/actions';
 
 import { setNotesDataAction, setShowNotesContentAction } from './notes/actions';
@@ -10,6 +11,7 @@ const dispatchMapper = {
   setCurrentYear: setCurrentYearAction,
   setShowNotesContent: setShowNotesContentAction,
   setNotesData: setNotesDataAction,
+  setSelectedDate: setSelectedDateAction,
 };
 
 export default function appDispatcher(dispatch) {

@@ -143,8 +143,6 @@ $colors: (
 
 
 .cal-month {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
   @extend %cf;
   counter-reset: month;
   transition: transform $duration $easing;
@@ -153,47 +151,12 @@ $colors: (
   &:first-child {
     margin-top: -$tile-size;
     
-    > .cal-header {
-      top: 2 * $tile-size;
-    }
+
     
     ~ .cal-month {
       margin-top: -$tile-size;
     }
   }
-  
-  > .cal-header {
-    position: absolute;
-    height: $tile-size;
-    width: $tile-size * 3;
-    padding: $tile-size / 3.5;
-    z-index: 1;
-    transition: all $duration $easing;
-    
-    > .cal-link {
-      display: block;
-      height: 100%;
-      width: 100%;
-      font-size: $type-small;
-      text-decoration: none;
-      color: gray;
-      text-transform: uppercase;
-      padding: $type-normal / 4 $type-normal * 2;
-      border-radius: $type-normal;
-      background: white;
-      transition: all $duration $easing;
-      font-weight: 600;
-      
-      > span {
-        display: block;
-        position: absolute;
-        top: 48%; // Uppercase text gets vertically centered weirdly.
-        left: 50%;
-        transition: all $duration $easing;
-      }
-    }
-  }
-
 }
 
 .cal-subheader {
@@ -399,14 +362,12 @@ $colors: (
   }
 }
 
+
 body {
   background: #4ACDDE;
   background: linear-gradient(135deg, #4EFFDF, #48BBDE, #F47EC6);
   font-family: Source Sans Pro, sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+
   
   @media (max-width: 750px) {
     justify-content: center;

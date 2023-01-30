@@ -11,3 +11,10 @@ export function setCurrentYear(state, currentYear) {
     currentYear,
   };
 }
+
+export function setSelectedDate(state, selectedDate) {
+  return {
+    ...state,
+    selectedDate,
+  };
+}

@@ -1,3 +1,59 @@
 {
-  "2023-01-01": [{ "id": 1, "title": "test", "content": "some text" }]
+  "notes": [
+    {
+      "date": "2023-01-09",
+      "title": "Jan 9 2023",
+      "content": "Some text content",
+      "id": 2
+    },
+    {
+      "date": "2025-02-07",
+      "title": "7 Feb 2025",
+      "content": "Sample text",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "date": "2025-02-07",
+      "title": "7 Feb 2025",
+      "content": "Sample text ",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "date": "2025-02-07",
+      "title": "test",
+      "content": "test",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "date": "2025-02-07",
+      "title": "test 2",
+      "content": "test",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "date": "2023-01-01",
+      "title": "test",
+      "content": "test",
+      "complete": false,
+      "id": 7
+    },
+    {
+      "date": "2023-01-01",
+      "title": "test",
+      "content": "test",
+      "complete": false,
+      "id": 10
+    },
+    {
+      "date": "2023-01-01",
+      "title": "test",
+      "content": "test",
+      "complete": false,
+      "id": 12
+    }
+  ]
 }

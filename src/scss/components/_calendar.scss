@@ -1,0 +1,55 @@
+.cal-scene {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cal-month {
+  max-height: 600px;
+  background-color: rgba($color: #fff, $alpha: 0.2);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 5px;
+}
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cal-day {
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(26, 117, 181, 0.6);
+  transition: all .3s ease-in-out;
+  font-weight: 600;
+  &[data-active=true]{
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+  &:hover{
+      background-color: rgba($color: #000000, $alpha: 0.6);
+  }
+  &--empty {
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.cal-header{
+    grid-column: span 7;
+    &__week-days{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    &__week-day{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        color: #fff;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,19 @@
+.page{
+    &__container{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        min-height: 100vh;
+    }
+    &__sidebar{
+        background-color: rgba(255,255,255,0.5);
+        padding: 0;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+    &__main{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
