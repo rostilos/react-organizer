@@ -6,6 +6,7 @@ function Edit({ setShowEditForm }) {
       type="button"
       onClick={() => setShowEditForm(true)}
       className="_button edit-content__button"
+      title="Edit Note"
     ></button>
   );
 }

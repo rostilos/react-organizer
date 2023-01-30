@@ -18,6 +18,7 @@ function Main() {
         <div className="page__main">
           <button
             onClick={() => setShowNotesContent(true)}
+            title="Open notes list"
             className="page__burger-icon"
           ></button>
           <Calendar />

@@ -10,7 +10,6 @@ import {
 
 import CalendarDay from './CalendarDay';
 import Toolbar from '../../Toolbar/components/Toolbar';
-import Notes from '../../Notes/Notes';
 import Header from './Header';
 
 function Calendar() {

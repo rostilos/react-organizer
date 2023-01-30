@@ -6,6 +6,7 @@ function ChangeStatus({ changeStatusRequest }) {
       type="button"
       onClick={changeStatusRequest}
       className="_button change-status__button"
+      title="Change complete status"
     ></button>
   );
 }

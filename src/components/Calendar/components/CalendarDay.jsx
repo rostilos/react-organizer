@@ -27,6 +27,7 @@ function CalendarDay({ num, id, className }) {
     <button
       type="button"
       onClick={handleClick}
+      title={id}
       id={id}
       data-active={selectedDate === id}
       className={className ? className : 'cal-day'}

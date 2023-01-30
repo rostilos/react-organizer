@@ -16,6 +16,7 @@ function Years() {
       <button
         type="button"
         onClick={prevYear}
+        title="Previous Year"
         className="toolbar-item__arrow toolbar-item__arrow--left"
       >
         
@@ -24,6 +25,7 @@ function Years() {
       <button
         type="button"
         onClick={nextYear}
+        title="Next Year"
         className="toolbar-item__arrow toolbar-item__arrow--right"
       >
       </button>

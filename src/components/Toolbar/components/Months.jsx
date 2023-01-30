@@ -26,12 +26,14 @@ function Months({ currentMonthName }) {
       <button
         type="button"
         onClick={prevMonth}
+        title="Previous Month"
         className="toolbar-item__arrow toolbar-item__arrow--left"
       ></button>
       <div className="toolbar-actions__name">{currentMonthName}</div>
       <button
         type="button"
         onClick={nextMonth}
+        title="Next Month"
         className="toolbar-item__arrow toolbar-item__arrow--right"
       ></button>
     </div>

@@ -10,6 +10,7 @@ function Header() {
       <button
         type="button"
         onClick={() => setShowNotesContent(false)}
+        title="Back to calendar"
         className="notes__close-mobile-header _button _button-close"
       ></button>
     </div>

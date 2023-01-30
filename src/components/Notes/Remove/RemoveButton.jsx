@@ -6,6 +6,7 @@ function RemoveButton({removeNote}) {
         type="button"
         onClick={removeNote}
         className="_button _button-close"
+        title="Remove Note"
       ></button>
   );
 }
