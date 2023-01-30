@@ -11,22 +11,18 @@ function Months({ currentMonthName }) {
     setCurrentMonth(currentMonthNum - 1);
   };
   return (
-    <div className="toolbar-actions__months">
+    <div className="toolbar-actions__item">
       <button
         type="button"
         onClick={prevMonth}
-        className="toolbar-moths__arrow toolbar-moths__arrow--left"
-      >
-        {'<'}
-      </button>
-      {currentMonthName}
+        className="toolbar-item__arrow toolbar-item__arrow--left"
+      ></button>
+      <div className="toolbar-actions__name">{currentMonthName}</div>
       <button
         type="button"
         onClick={nextMonth}
-        className="toolbar-moths__arrow toolbar-moths__arrow--right"
-      >
-        {'>'}
-      </button>
+        className="toolbar-item__arrow toolbar-item__arrow--right"
+      ></button>
     </div>
   );
 }

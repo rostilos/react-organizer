@@ -12,21 +12,20 @@ function Years() {
   };
 
   return (
-    <div className="toolbar-actions__months">
+    <div className="toolbar-actions__item">
       <button
         type="button"
         onClick={prevYear}
-        className="toolbar-moths__arrow toolbar-moths__arrow--left"
+        className="toolbar-item__arrow toolbar-item__arrow--left"
       >
-        {'<'}
+        
       </button>
-      {currentYear}
+      <div className="toolbar-actions__name">{currentYear}</div>
       <button
         type="button"
         onClick={nextYear}
-        className="toolbar-moths__arrow toolbar-moths__arrow--right"
+        className="toolbar-item__arrow toolbar-item__arrow--right"
       >
-        {'>'}
       </button>
     </div>
   );

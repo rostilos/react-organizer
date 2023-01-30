@@ -6,7 +6,7 @@ import Years from './Years';
 function Toolbar({ currentMonth }) {
   return (
     <div class="toolbar">
-      <div className="toobar-actions">
+      <div className="toolbar-actions">
         <Months currentMonthName={currentMonth} />
         <Years />
       </div>
