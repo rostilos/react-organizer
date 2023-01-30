@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AddIcon from './AddIcon';
-import Form from './Form';
+import AddNewForm from './AddNewForm';
 
 function AddNew() {
   const [showForm, setShowForm] = useState(false);
@@ -12,7 +12,7 @@ function AddNew() {
         (showForm ? 'add-new-note--active' : 'add-new-note--not-active')
       }
     >
-      {showForm && <Form setShowForm={setShowForm}/>}
+      {showForm && <AddNewForm setShowForm={setShowForm}/>}
       {!showForm && <AddIcon setShowForm={setShowForm} />}
     </div>
   );

@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RemoveButton from './Remove/RemoveButton';
 import { removeNote } from '../../api/notes/removeNote';
+import { editNoteContent } from '../../api/notes/editNoteContent';
 import useAppContext from '../../hook/useAppContext';
 import { fetchNotesList } from '../../api/notes/fetchNotesList';
+import CompleteStatus from './CompleteStatus/CompleteStatus';
+import ChangeStatus from './CompleteStatus/ChangeStatus';
+import Edit from './Edit/Edit';
+import EditForm from './Edit/EditForm';
 
 function NotesItem({ data }) {
   const { setNotesData, selectedDate } = useAppContext();
+  const [showEditForm, setShowEditForm] = useState(false);
 
   const removeNoteRequest = async () => {
     await removeNote(data.id).then(() => reloadNotesSection());
+  };
+  const changeStatusRequest = async () => {
+    await editNoteContent({ ...data, complete: !data.complete }).then(() =>
+      reloadNotesSection()
+    );
+  };
+
+  const changeNoteContentRequest = async (data) => {
+    await editNoteContent(data).then(() => reloadNotesSection());
   };
 
   const reloadNotesSection = async () => {
@@ -21,6 +36,11 @@ function NotesItem({ data }) {
   return (
     <div className="notes-item note">
       <RemoveButton removeNote={removeNoteRequest} />
+      <ChangeStatus
+        changeStatusRequest={changeStatusRequest}
+        status={data.complete}
+      />
+      <Edit setShowEditForm={setShowEditForm} />
       <div className="note__header">
         <p>
           <span>{data.id} </span>
@@ -31,11 +51,15 @@ function NotesItem({ data }) {
         <p>
           <span>To Do: </span> <span>{data.content}</span>
         </p>
-
-        <p>
-          <span>Complete status:</span> <span>{data.complete}</span>
-        </p>
+        <CompleteStatus status={data.complete} />
       </div>
+      {showEditForm && (
+        <EditForm
+          changeNoteContentRequest={changeNoteContentRequest}
+          setShowEditForm={setShowEditForm}
+          data={data}
+        />
+      )}
     </div>
   );
 }

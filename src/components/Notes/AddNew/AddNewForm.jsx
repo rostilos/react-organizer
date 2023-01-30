@@ -3,7 +3,7 @@ import useAppContext from '../../../hook/useAppContext';
 import { addNoteToSpecificDate } from '../../../api/notes/addNoteToSpecificDate';
 import { fetchNotesList } from '../../../api/notes/fetchNotesList';
 
-function Form({ setShowForm }) {
+function AddNewForm({ setShowForm }) {
   const { selectedDate, setNotesData } = useAppContext();
 
   const titleRef = React.useRef();
@@ -36,21 +36,21 @@ function Form({ setShowForm }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-new-note__form add-form">
+    <form onSubmit={handleSubmit} className="add-new-note__form _form">
       <button
         type="button"
         onClick={closeForm}
-        className="add-form__close _button"
+        className="_form__close _button"
       ></button>
       <p>Title</p>
-      <input ref={titleRef} type="text" className="add-form__input" />
+      <input ref={titleRef} type="text" className="_form__input" />
       <p>Text</p>
-      <textarea ref={contentRef} type="text" className="add-form__input" />
-      <button type="submit" className="add-form__button _button">
+      <textarea ref={contentRef} type="text" className="_form__input" />
+      <button type="submit" className="_form__button _button">
         Add
       </button>
     </form>
   );
 }
 
-export default Form;
+export default AddNewForm;

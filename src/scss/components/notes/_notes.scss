@@ -1,0 +1,15 @@
+.notes {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__header {
+    padding: 5px 10px;
+    background-color: #1a75b5b5;
+    color: #fff;
+  }
+  &__content {
+    padding: 10px;
+    flex-grow: 1;
+  }
+}
