@@ -3,13 +3,38 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  @media screen and (max-width: 768px){
+    background-color: #fff;
+  }
   &__header {
     padding: 5px 10px;
     background-color: #1a75b5b5;
     color: #fff;
+    @media screen and (max-width: 768px){
+      background-color: $mainBlue;
+      position: relative;
+    }
   }
   &__content {
     padding: 10px;
     flex-grow: 1;
+    
+  }
+  &__close-mobile-header{
+    display: none;
+    @media screen and (max-width: 768px){
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+      right: 7px;
+      background-color: transparent;
+      width: 30px;
+      height: 30px;
+      &:after{
+        width: 17px;
+        height: 17px;
+      }
+    }
   }
 }

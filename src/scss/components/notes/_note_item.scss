@@ -3,6 +3,9 @@
   border-radius: 15px;
   padding: 5px 12px;
   margin-bottom: 15px;
+  @media screen and (max-width: 768px){
+    background-color: rgba($color: $mainBlue, $alpha: 0.15);
+  }
   &__header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.152);
     padding: 5px 0;

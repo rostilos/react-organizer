@@ -4,7 +4,7 @@ import { fetchNotesList } from '../../../api/notes/fetchNotesList';
 import useAppContext from '../../../hook/useAppContext';
 
 function CalendarDay({ num, id, className }) {
-  const { setNotesData, setSelectedDate, selectedDate } = useAppContext();
+  const { setNotesData, setSelectedDate, selectedDate, setShowNotesContent } = useAppContext();
 
   const fetchNotesByDay = async () => {
     const data = await fetchNotesList(id).then((data) => {
@@ -19,6 +19,7 @@ function CalendarDay({ num, id, className }) {
   useEffect(() => {
     if(selectedDate === id){
       fetchNotesByDay(id);
+      setShowNotesContent(true);
     }
   }, [selectedDate]);
 
