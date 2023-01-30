@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useAppContext from '../../../hook/useAppContext';
 import { addNoteToSpecificDate } from '../../../api/notes/addNoteToSpecificDate';
 import { fetchNotesList } from '../../../api/notes/fetchNotesList';
@@ -23,6 +23,7 @@ function AddNewForm({ setShowForm }) {
   const addNewNoteRequest = (formData) => {
     addNoteToSpecificDate(formData);
     reloadNotesSection();
+    closeForm();
   };
   const reloadNotesSection = async () => {
     const data = await fetchNotesList(selectedDate).then((data) => {

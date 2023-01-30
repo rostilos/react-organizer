@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useAppContext from '../../../hook/useAppContext';
-import { addNoteToSpecificDate } from '../../../api/notes/addNoteToSpecificDate';
-import { fetchNotesList } from '../../../api/notes/fetchNotesList';
 
-function EditForm({ setShowForm, data, changeNoteContentRequest }) {
-  const { selectedDate, setNotesData } = useAppContext();
+function EditForm({ setShowEditForm, data, changeNoteContentRequest }) {
+  const { selectedDate } = useAppContext();
 
   const titleRef = React.useRef();
   const contentRef = React.useRef();
@@ -19,13 +17,10 @@ function EditForm({ setShowForm, data, changeNoteContentRequest }) {
       complete: data.complete,
     };
     changeNoteContentRequest(data);
+    closeForm();
   };
-  const handleChange = (e) => {
-
-  }
-
   const closeForm = () => {
-    setShowForm(false);
+    setShowEditForm(false);
   };
 
   return (

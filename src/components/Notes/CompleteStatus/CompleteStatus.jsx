@@ -3,7 +3,7 @@ import React from 'react';
 function CompleteStatus({ status }) {
   return (
     <p className='complete'>
-      <span>Complete status:</span>{' '}
+      <span>Complete status :</span>{' '}
       <span className='complete__info'>
         {status ? 'Complete' : 'Not complete'}
         <span

@@ -43,13 +43,16 @@ function NotesItem({ data }) {
       <Edit setShowEditForm={setShowEditForm} />
       <div className="note__header">
         <p>
-          <span>{data.id} </span>
           <span>{data.title}</span>{' '}
         </p>
       </div>
       <div className="note__content">
         <p>
-          <span>To Do: </span> <span>{data.content}</span>
+          <span>Date : </span>
+          <span>{data.date}</span>
+        </p>
+        <p>
+          <span>To Do : </span> <span>{data.content}</span>
         </p>
         <CompleteStatus status={data.complete} />
       </div>

@@ -2,13 +2,24 @@ import React from 'react';
 import useAppContext from '../../../hook/useAppContext';
 
 function Months({ currentMonthName }) {
-  const { setCurrentMonth, currentMonthNum } = useAppContext();
+  const { setCurrentMonth, currentMonthNum, setCurrentYear, currentYear } =
+    useAppContext();
 
   const nextMonth = () => {
-    setCurrentMonth(currentMonthNum + 1);
+    if (currentMonthNum < 11) {
+      setCurrentMonth(currentMonthNum + 1);
+    } else {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    }
   };
   const prevMonth = () => {
-    setCurrentMonth(currentMonthNum - 1);
+    if(currentMonthNum > 0){
+      setCurrentMonth(currentMonthNum - 1);
+    }else{
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    }
   };
   return (
     <div className="toolbar-actions__item">
