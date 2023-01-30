@@ -27,7 +27,6 @@ export function getMonthName(month = 0, year = 2023) {
 export function getFirstWeekDayOfMonth(month = 0, year = 2023) {
   let day = new Date(`${year}-${month + 1}-01`).getDay();
   day = (day===0) ? 7 : day
-  console.log(`${year}-${month + 1}-01`);
   
   return day;
 }

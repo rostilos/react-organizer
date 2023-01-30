@@ -10,6 +10,8 @@ import {
 
 import CalendarDay from './CalendarDay';
 import Toolbar from '../../Toolbar/components/Toolbar';
+import Notes from '../../Notes/Notes';
+import Header from './Header';
 
 function Calendar() {
   const { currentMonthNum, currentYear } = useAppContext();
@@ -26,10 +28,9 @@ function Calendar() {
     setFirstDayOfWeek(firstMonthDay);
   }, [currentYear, currentMonthNum]);
 
-  console.log(firstDayOfWeek);
   const components = [];
   for (let k = 0; k < firstDayOfWeek - 1; k++) {
-    components.push(<CalendarDay num={null} />);
+    components.push(<CalendarDay num={null} className="cal-day--empty" />);
   }
   for (let i = 0; i < daysCount; i++) {
     components.push(
@@ -47,7 +48,10 @@ function Calendar() {
   return (
     <div className="cal-scene -calendar">
       <Toolbar currentMonth={curMonthName} />
-      <div className="cal-month">{components}</div>
+      <div className="cal-month">
+        <Header />
+        {components}
+      </div>
     </div>
   );
 }
