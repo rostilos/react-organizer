@@ -1,9 +1,19 @@
-import React from "react";
+import React from 'react';
+import NotesList from './NotesList';
+import Header from './Header';
+import AddNew from './AddNew/AddNew';
+
+import useAppContext from '../../hook/useAppContext';
 
 function Notes() {
+  const { notesData, showNotesContent } = useAppContext();
 
   return (
-      <div>test</div>
+    <div className='notes'>
+      <Header />
+      <NotesList notesData={notesData} />
+      <AddNew />
+    </div>
   );
 }
 
