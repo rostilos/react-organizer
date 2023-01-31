@@ -29,7 +29,8 @@
     transition: all 0.3s ease-in-out;
     @media screen and (max-width: 768px) {
         min-height: 100vh;
-      width: 265px;
+      width: 90%;
+      min-width: 265px;
       height: 100%;
       transform: translateX(-100%);
       position: absolute;
@@ -60,6 +61,7 @@
       background: none;
       border: 0;
       z-index: 30;
+      cursor: pointer;
       &:after{
           content: '';
           display: block;
