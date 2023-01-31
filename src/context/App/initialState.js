@@ -4,6 +4,7 @@ const initialState = {
   notesData: {},
   showNotesContent: false,
   selectedDate: '2023-01-01',
+  showAllNotes: false
 };
 
 export default initialState;

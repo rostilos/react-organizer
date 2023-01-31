@@ -4,20 +4,26 @@ import { fetchNotesList } from '../../../api/notes/fetchNotesList';
 import useAppContext from '../../../hook/useAppContext';
 
 function CalendarDay({ num, id, className }) {
-  const { setNotesData, setSelectedDate, selectedDate, setShowNotesContent } = useAppContext();
+  const {
+    setNotesData,
+    setSelectedDate,
+    selectedDate,
+    setShowNotesContent,
+    setShowAllNotes,
+  } = useAppContext();
 
   const fetchNotesByDay = async () => {
     const data = await fetchNotesList(id).then((data) => {
       return data;
     });
     setNotesData(data);
-
+    setShowAllNotes(false);
   };
   const handleClick = () => {
     setSelectedDate(id);
   };
   useEffect(() => {
-    if(selectedDate === id){
+    if (selectedDate === id) {
       fetchNotesByDay(id);
       setShowNotesContent(true);
     }

@@ -3,14 +3,14 @@ import RemoveButton from './Remove/RemoveButton';
 import { removeNote } from '../../api/notes/removeNote';
 import { editNoteContent } from '../../api/notes/editNoteContent';
 import useAppContext from '../../hook/useAppContext';
-import { fetchNotesList } from '../../api/notes/fetchNotesList';
+import { fetchNotesList, fetchAllNotes } from '../../api/notes/fetchNotesList';
 import CompleteStatus from './CompleteStatus/CompleteStatus';
 import ChangeStatus from './CompleteStatus/ChangeStatus';
 import Edit from './Edit/Edit';
 import EditForm from './Edit/EditForm';
 
 function NotesItem({ data }) {
-  const { setNotesData, selectedDate } = useAppContext();
+  const { setNotesData, selectedDate, showAllNotes } = useAppContext();
   const [showEditForm, setShowEditForm] = useState(false);
 
   const removeNoteRequest = async () => {
@@ -37,9 +37,13 @@ function NotesItem({ data }) {
   };
 
   const reloadNotesSection = async () => {
-    const data = await fetchNotesList(selectedDate).then((data) => {
-      return data;
-    });
+    const data = showAllNotes
+      ? await fetchAllNotes().then((data) => {
+          return data;
+        })
+      : await fetchNotesList(selectedDate).then((data) => {
+          return data;
+        });
     setNotesData(data);
   };
 
@@ -53,7 +57,7 @@ function NotesItem({ data }) {
       <Edit setShowEditForm={setShowEditForm} />
       <div className="note__header">
         <p>
-          <span>{data.title}</span>{' '}
+          <span>{data.title ?? 'No title Data'}</span>
         </p>
       </div>
       <div className="note__content">
@@ -62,7 +66,7 @@ function NotesItem({ data }) {
           <span>{data.date}</span>
         </p>
         <p>
-          <span>To Do : </span> <span>{data.content}</span>
+          <span>To Do : </span> <span>{data.content ?? 'No content Data'}</span>
         </p>
         <CompleteStatus status={data.complete} />
       </div>

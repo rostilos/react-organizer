@@ -11,3 +11,10 @@ export function setShowNotesContent(state, showNotesContent) {
     showNotesContent,
   };
 }
+
+export function setShowAllNotes(state, showAllNotes) {
+  return {
+    ...state,
+    showAllNotes,
+  };
+}

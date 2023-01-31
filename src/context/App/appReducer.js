@@ -9,8 +9,16 @@ import {
   setSelectedDate,
 } from './calendar/reducers';
 
-import { SET_NOTES_DATA, SET_SHOW_NOTES } from './notes/types';
-import { setNotesData, setShowNotesContent } from './notes/reducers';
+import {
+  SET_NOTES_DATA,
+  SET_SHOW_NOTES,
+  SET_SHOW_ALL_NOTES,
+} from './notes/types';
+import {
+  setNotesData,
+  setShowNotesContent,
+  setShowAllNotes,
+} from './notes/reducers';
 
 const actions = {
   [SET_CURRENT_MONTH]: setCurrentMonth,
@@ -18,6 +26,7 @@ const actions = {
   [SET_NOTES_DATA]: setNotesData,
   [SET_SHOW_NOTES]: setShowNotesContent,
   [SET_SELECTED_DATE]: setSelectedDate,
+  [SET_SHOW_ALL_NOTES]: setShowAllNotes,
 };
 
 export default function appReducer(state, { type, payload }) {
