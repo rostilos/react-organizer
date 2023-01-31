@@ -23,7 +23,7 @@
 .cal-day {
   border: 0;
   border-radius: 50%;
-  background-color: rgba(26, 117, 181, 0.6);
+  background-color: rgba($color: $mainBlue, $alpha: 0.6);
   transition: all .3s ease-in-out;
   font-weight: 600;
   &[data-active=true]{
