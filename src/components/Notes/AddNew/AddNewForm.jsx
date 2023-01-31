@@ -22,7 +22,9 @@ function AddNewForm({ setShowForm }) {
 
   const addNewNoteRequest = (formData) => {
     addNoteToSpecificDate(formData);
-    reloadNotesSection();
+    setTimeout(() => {
+      reloadNotesSection();
+    }, 0);
     closeForm();
   };
   const reloadNotesSection = async () => {

@@ -14,16 +14,26 @@ function NotesItem({ data }) {
   const [showEditForm, setShowEditForm] = useState(false);
 
   const removeNoteRequest = async () => {
-    await removeNote(data.id).then(() => reloadNotesSection());
+    await removeNote(data.id).then(() =>
+      setTimeout(() => {
+        reloadNotesSection();
+      }, 0)
+    );
   };
   const changeStatusRequest = async () => {
     await editNoteContent({ ...data, complete: !data.complete }).then(() =>
-      reloadNotesSection()
+      setTimeout(() => {
+        reloadNotesSection();
+      }, 0)
     );
   };
 
   const changeNoteContentRequest = async (data) => {
-    await editNoteContent(data).then(() => reloadNotesSection());
+    await editNoteContent(data).then(() =>
+      setTimeout(() => {
+        reloadNotesSection();
+      }, 0)
+    );
   };
 
   const reloadNotesSection = async () => {
