@@ -3,11 +3,11 @@ import useAppContext from '../../hook/useAppContext';
 import ShowAll from './ShowAll/ShowAll';
 
 function Header() {
-  const { setShowNotesContent } = useAppContext();
+  const { setShowNotesContent, showAllNotes } = useAppContext();
 
   return (
     <div className="notes__header">
-      <h2>Notes</h2>
+      <h2> {showAllNotes ? 'All Notes' : 'Notes by day'}</h2>
       <button
         type="button"
         onClick={() => setShowNotesContent(false)}
