@@ -33,6 +33,7 @@ function EditForm({ setShowEditForm, data, changeNoteContentRequest }) {
       <p>Title</p>
       <input
         ref={titleRef}
+        required
         type="text"
         className="_form__input"
         defaultValue={data.title}
@@ -40,6 +41,7 @@ function EditForm({ setShowEditForm, data, changeNoteContentRequest }) {
       <p>Text</p>
       <textarea
         ref={contentRef}
+        required
         type="text"
         className="_form__input"
         defaultValue={data.content}

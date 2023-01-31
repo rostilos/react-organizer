@@ -46,9 +46,9 @@ function AddNewForm({ setShowForm }) {
         className="_form__close _button"
       ></button>
       <p>Title</p>
-      <input ref={titleRef} type="text" className="_form__input" />
+      <input required ref={titleRef} type="text" className="_form__input" />
       <p>Text</p>
-      <textarea ref={contentRef} type="text" className="_form__input" />
+      <textarea required ref={contentRef} type="text" className="_form__input" />
       <button type="submit" className="_form__button _button">
         Add
       </button>
