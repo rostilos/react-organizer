@@ -12,69 +12,6 @@ $type-small: $tile-size / 4;
 $type-normal: $tile-size / 3;
 $type-large: $tile-size / 2.5;
 
-$colors: (
-  #fbec6b,
-  #f4bc6b,
-  #eb8b6b,
-  #e0536b,
-  #d6306d,
-  #a32c68,
-  #722a65,
-  #422662,
-  #12255d,
-  #275b75,
-  #3c918b,
-  #52c6a2,
-  #66f8b6,
-  lighten(#66f8b6, 10%)
-);
-
-@function list-slice($list, $from, $to: length($list)) {
-  $result: ();
-
-  @for $i from $from through $to {
-    $result: append($result, nth($list, $i));
-  }
-
-  @return $result;
-}
-
-@function shadows($from: 1, $app: false) {
-  $shadows: ();
-  $i: 0;
-
-  @if ($app) {
-    @each $color in list-slice($colors, $from, length($colors) - 1) {
-      $i: $i + 1;
-      $shadows: append($shadows, $color, comma);
-    }
-
-    @return $shadows;
-  }
-
-  @each $color in list-slice($colors, $from, length($colors) - 1) {
-    $i: $i + 1;
-    $subshadows: ();
-    $darkest-color: nth(list-slice($colors, $from), $i + 1);
-
-    @for $j from 1 through 7 {
-      $subshadows: append(
-        $subshadows,
-        ($j - 1) *
-          $tile-size
-          $i *
-          $tile-size
-          mix($darkest-color, $color, percentage($j / 7)),
-        comma
-      );
-    }
-
-    $shadows: append($shadows, $subshadows, comma);
-  }
-
-  @return $shadows;
-}
-
 %transition {
   transition: all $duration $easing;
 }
@@ -94,17 +31,6 @@ $colors: (
   }
   to {
     opacity: 1;
-  }
-}
-
-.cal-device {
-  width: $device-width;
-  height: $device-height;
-  background: white;
-
-  > .cal-header {
-    height: $tile-size * 1.5;
-    background: #1c3e69;
   }
 }
 
@@ -149,7 +75,7 @@ $colors: (
 
 body {
   background: #4acdde;
-  background: linear-gradient(135deg, #4effdf, #48bbde, #f47ec6);
+  background: linear-gradient(135deg, #4effdf, #48bbde, #7ef4ce);
   font-family: Source Sans Pro, sans-serif;
 
   @media (max-width: 750px) {
@@ -171,8 +97,4 @@ body {
 *:after {
   box-sizing: border-box;
   position: relative;
-}
-
-%cf:after {
-  clear: both;
 }
