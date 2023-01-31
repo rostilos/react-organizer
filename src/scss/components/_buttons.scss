@@ -4,6 +4,9 @@
     color: $text;
     background-color: #fff;
     border: 0;
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.6);
+    }
 }
 ._button-close{
     position: absolute;
