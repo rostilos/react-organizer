@@ -7,3 +7,9 @@ export const fetchNotesList = async (date) => {
   const data = await fetch(url)
   return data.json();
 }
+export const fetchAllNotes = async () => {
+  const baseUrl = config.dbEndpoint;
+  const url = `${baseUrl}/notes`;
+  const data = await fetch(url)
+  return data.json();
+}

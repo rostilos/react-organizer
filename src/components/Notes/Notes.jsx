@@ -6,10 +6,10 @@ import AddNew from './AddNew/AddNew';
 import useAppContext from '../../hook/useAppContext';
 
 function Notes() {
-  const { notesData, showNotesContent } = useAppContext();
+  const { notesData } = useAppContext();
 
   return (
-    <div className='notes'>
+    <div className="notes">
       <Header />
       <NotesList notesData={notesData} />
       <AddNew />
